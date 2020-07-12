@@ -1,7 +1,8 @@
-package com.jsevilla.musicapp
+package com.jsevilla.musicapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jsevilla.musicapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
