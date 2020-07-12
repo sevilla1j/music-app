@@ -7,7 +7,6 @@ import com.jsevilla.musicapp.presentation.di.component.AppComponent
 import com.jsevilla.musicapp.presentation.di.component.DaggerAppComponent
 import com.jsevilla.musicapp.presentation.di.module.AppModule
 
-
 class App : MultiDexApplication() {
 
     var appComponent: AppComponent? = null

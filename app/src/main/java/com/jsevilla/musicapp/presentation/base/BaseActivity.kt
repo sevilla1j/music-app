@@ -9,6 +9,7 @@ import com.jsevilla.musicapp.App
 import com.jsevilla.musicapp.R
 import com.jsevilla.musicapp.presentation.di.component.AppComponent
 import com.jsevilla.musicapp.presentation.di.module.ActivityModule
+import com.jsevilla.musicapp.presentation.feature.splash.di.SplashComponent
 import com.jsevilla.musicapp.presentation.navigation.Navigator
 import com.jsevilla.musicapp.presentation.util.StringUtil
 import javax.inject.Inject
@@ -18,7 +19,7 @@ abstract class BaseActivity : AppCompatActivity() {
     @Inject
     lateinit var navigator: Navigator
 
-    private val appComponent: AppComponent
+    protected val appComponent: AppComponent
         get() = (application as App).appComponent!!
 
     protected val activityModule: ActivityModule

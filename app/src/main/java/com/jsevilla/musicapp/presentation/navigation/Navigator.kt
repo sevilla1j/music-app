@@ -4,4 +4,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class Navigator @Inject internal constructor()
+class Navigator @Inject internal constructor() {
+
+}
