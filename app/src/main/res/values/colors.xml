@@ -5,4 +5,6 @@
     <color name="colorAccent">#7030A0</color>
 
     <color name="colorBackground">#FFFFFF</color>
+    <color name="colorBlackLock">#80000000</color>
+    <color name="colorGray">#4D4E50</color>
 </resources>
