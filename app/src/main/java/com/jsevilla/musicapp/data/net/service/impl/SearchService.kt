@@ -5,21 +5,21 @@ import com.jsevilla.musicapp.BuildConfig
 import com.jsevilla.musicapp.data.common.exception.NetworkConnectionException
 import com.jsevilla.musicapp.data.entity.ApiEntity
 import com.jsevilla.musicapp.data.net.RestApi
-import com.jsevilla.musicapp.data.net.service.IHomeService
+import com.jsevilla.musicapp.data.net.service.ISearchService
 
-class HomeService(
+class SearchService(
     context: Context
-) : BaseService(context), IHomeService {
+) : BaseService(context), ISearchService {
 
-    private val service: IHomeService =
+    private val service: ISearchService =
         RestApi.create(
-            IHomeService::class.java,
+            ISearchService::class.java,
             BuildConfig.BASE_URL
         )
 
-    override suspend fun getListData(): ApiEntity {
+    override suspend fun getSearch(search: String?, mediaType: String?, limit: Int?): ApiEntity {
         if (isThereInternetConnection) {
-            return service.getListData()
+            return service.getSearch(search, mediaType, limit)
         } else {
             throw NetworkConnectionException()
         }

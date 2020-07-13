@@ -1,7 +1,7 @@
 package com.jsevilla.musicapp.data.net.service.impl
 
 import android.content.Context
-import com.jsevilla.musicapp.data.common.NetworkUtil
+import com.jsevilla.musicapp.data.common.network.util.NetworkUtil
 
 abstract class BaseService protected constructor(val context: Context?) {
 

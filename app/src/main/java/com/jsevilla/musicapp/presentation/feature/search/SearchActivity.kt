@@ -1,4 +1,4 @@
-package com.jsevilla.musicapp.presentation.feature.home
+package com.jsevilla.musicapp.presentation.feature.search
 
 import android.content.Context
 import android.content.Intent
@@ -9,21 +9,21 @@ import android.view.Window
 import com.jsevilla.musicapp.R
 import com.jsevilla.musicapp.presentation.base.BaseActivity
 import com.jsevilla.musicapp.presentation.di.HasComponent
-import com.jsevilla.musicapp.presentation.feature.home.di.DaggerHomeComponent
-import com.jsevilla.musicapp.presentation.feature.home.di.HomeComponent
-import kotlinx.android.synthetic.main.activity_home.*
+import com.jsevilla.musicapp.presentation.feature.search.di.DaggerSearchComponent
+import com.jsevilla.musicapp.presentation.feature.search.di.SearchComponent
+import kotlinx.android.synthetic.main.activity_search.*
 
-class HomeActivity : BaseActivity(), HasComponent<HomeComponent>,
-    HomeFragment.HomeFragmentListener {
+class SearchActivity : BaseActivity(), HasComponent<SearchComponent>,
+    SearchFragment.SearchFragmentListener {
 
-    private var component: HomeComponent? = null
+    private var component: SearchComponent? = null
 
-    private val homeFragment = HomeFragment.newInstance()
+    private val searchFragment = SearchFragment.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_search)
 
         init(savedInstanceState)
     }
@@ -40,15 +40,15 @@ class HomeActivity : BaseActivity(), HasComponent<HomeComponent>,
         if (savedInstanceState == null) {
             addFragment(
                 R.id.fltContainer,
-                homeFragment,
+                searchFragment,
                 true,
-                getString(R.string.txt_home)
+                getString(R.string.txt_search)
             )
         }
     }
 
     override fun initializeInjector() {
-        this.component = DaggerHomeComponent.builder()
+        this.component = DaggerSearchComponent.builder()
             .appComponent(appComponent)
             .activityModule(activityModule)
             .build()
@@ -62,8 +62,12 @@ class HomeActivity : BaseActivity(), HasComponent<HomeComponent>,
         //
     }
 
-    override fun getComponent(): HomeComponent? {
+    override fun getComponent(): SearchComponent? {
         return component
+    }
+
+    override fun onBackPressed() {
+        this.navigator.navigateToHome(this)
     }
 
     override fun showLoading() {
@@ -74,21 +78,9 @@ class HomeActivity : BaseActivity(), HasComponent<HomeComponent>,
         view_loading.visibility = View.GONE
     }
 
-    override fun openMenu() {
-        //
-    }
-
-    override fun openSetting() {
-        this.navigator.navigateToSetting(this)
-    }
-
-    override fun openSearch() {
-        this.navigator.navigateToSearch(this)
-    }
-
     companion object {
         fun getCallingIntent(context: Context): Intent {
-            return Intent(context, HomeActivity::class.java)
+            return Intent(context, SearchActivity::class.java)
         }
     }
 }

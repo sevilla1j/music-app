@@ -63,7 +63,7 @@ class HomeFragment : BaseFragment(), HomeView {
 
     override fun onResume() {
         super.onResume()
-        presenter.getListData()
+        getData()
     }
 
     override fun onDetach() {
@@ -135,8 +135,6 @@ class HomeFragment : BaseFragment(), HomeView {
     }
 
     companion object {
-        fun newInstance(): HomeFragment {
-            return HomeFragment()
-        }
+        fun newInstance() = HomeFragment()
     }
 }
