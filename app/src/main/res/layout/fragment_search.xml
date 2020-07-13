@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/dp32"
+            android:layout_height="@dimen/dp32"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp8"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_back"
+            android:tint="@color/colorGray" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp16"
+            android:layout_marginBottom="@dimen/dp8"
+            app:boxCornerRadiusBottomEnd="@dimen/dp16"
+            app:hintEnabled="false"
+            app:boxCornerRadiusBottomStart="@dimen/dp16"
+            app:boxCornerRadiusTopEnd="@dimen/dp16"
+            app:boxCornerRadiusTopStart="@dimen/dp16"
+            app:endIconMode="clear_text"
+            app:startIconContentDescription="@string/app_name"
+            app:startIconDrawable="@drawable/ic_search"
+            app:startIconTint="@color/colorGray">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtSearchMusic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_rounded"
+                android:fontFamily="@font/font_harlow"
+                android:hint="@string/txt_search_music"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textColor="@color/colorGray"
+                android:textSize="@dimen/sp20" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp16"
+        android:background="@drawable/card_view_rounded"
+        android:elevation="@dimen/dp16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp24"
+            android:layout_marginEnd="@dimen/dp8"
+            android:layout_marginStart="@dimen/dp8"
+            android:background="@color/colorBackground"
+            android:fillViewport="true"
+            android:fitsSystemWindows="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/progress_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="empty.json"
+                    app:lottie_imageAssetsFolder="assets"
+                    app:lottie_loop="true" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/progress_empty_connection"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="connection.json"
+                    app:lottie_imageAssetsFolder="assets"
+                    app:lottie_loop="true" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

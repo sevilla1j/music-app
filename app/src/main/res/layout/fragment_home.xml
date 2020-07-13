@@ -95,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/dp8"
-            android:layout_marginTop="@dimen/dp32"
+            android:layout_marginTop="@dimen/dp24"
             android:layout_marginEnd="@dimen/dp8"
             android:background="@color/colorBackground"
             android:fillViewport="true"
@@ -115,7 +115,7 @@
                     android:fontFamily="@font/font_harlow"
                     android:text="@string/txt_recent_activities"
                     android:textColor="@color/colorGray"
-                    android:textSize="@dimen/sp20" />
+                    android:textSize="@dimen/sp24" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewItem"

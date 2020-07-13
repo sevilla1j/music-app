@@ -21,12 +21,6 @@ data class Music(
     @SerializedName("artworkUrl60")
     var artworkUrl60: String? = null,
 
-    @SerializedName("collectionArtistId")
-    var collectionArtistId: Int? = null,
-
-    @SerializedName("collectionArtistViewUrl")
-    var collectionArtistViewUrl: String? = null,
-
     @SerializedName("collectionCensoredName")
     var collectionCensoredName: String? = null,
 
@@ -63,9 +57,6 @@ data class Music(
     @SerializedName("discNumber")
     var discNumber: Int? = null,
 
-    @SerializedName("hasITunesExtras")
-    var hasITunesExtras: Boolean? = null,
-
     @SerializedName("isStreamable")
     var isStreamable: Boolean? = null,
 
@@ -99,9 +90,6 @@ data class Music(
     @SerializedName("trackHdPrice")
     var trackHdPrice: Double? = null,
 
-    @SerializedName("trackHdRentalPrice")
-    var trackHdRentalPrice: Double? = null,
-
     @SerializedName("trackId")
     var trackId: Int? = null,
 
@@ -113,9 +101,6 @@ data class Music(
 
     @SerializedName("trackPrice")
     var trackPrice: Double? = null,
-
-    @SerializedName("trackRentalPrice")
-    var trackRentalPrice: Double? = null,
 
     @SerializedName("trackTimeMillis")
     var trackTimeMillis: Int? = null,

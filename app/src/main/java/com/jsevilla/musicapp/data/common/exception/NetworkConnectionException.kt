@@ -1,4 +1,4 @@
-package pe.iqproject.library.net.exception
+package com.jsevilla.musicapp.data.common.exception
 
 class NetworkConnectionException : ServiceException {
     constructor() : super("No hay conexión a internet.") {}

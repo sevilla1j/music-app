@@ -1,4 +1,4 @@
-package com.jsevilla.musicapp.data.common
+package com.jsevilla.musicapp.data.common.network.util
 
 import android.content.Context
 import android.net.ConnectivityManager

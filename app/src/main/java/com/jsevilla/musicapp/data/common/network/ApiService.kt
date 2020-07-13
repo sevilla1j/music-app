@@ -1,4 +1,4 @@
-package com.jsevilla.musicapp.data.common
+package com.jsevilla.musicapp.data.common.network
 
 import android.content.Context
 import com.google.gson.GsonBuilder
@@ -77,9 +77,12 @@ class ApiService internal constructor(private val baseUrl: String?) {
 
     class Builder {
         private var baseUrl: String? = null
-        private var connectTimeout = CONNECT_TIMEOUT
-        private var readTimeout = READ_TIMEOUT
-        private var writeTimeout = WRITE_TIMEOUT
+        private var connectTimeout =
+            CONNECT_TIMEOUT
+        private var readTimeout =
+            READ_TIMEOUT
+        private var writeTimeout =
+            WRITE_TIMEOUT
 
         fun baseUrl(baseUrl: String?): Builder {
             this.baseUrl = baseUrl

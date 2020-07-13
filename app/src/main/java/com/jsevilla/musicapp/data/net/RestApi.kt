@@ -1,7 +1,7 @@
 package com.jsevilla.musicapp.data.net
 
 import com.jsevilla.musicapp.BuildConfig
-import com.jsevilla.musicapp.data.common.ApiService
+import com.jsevilla.musicapp.data.common.network.ApiService
 
 object RestApi {
     private const val CONNECT_TIMEOUT: Long = 30
