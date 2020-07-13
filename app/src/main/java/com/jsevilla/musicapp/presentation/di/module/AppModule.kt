@@ -2,8 +2,10 @@ package com.jsevilla.musicapp.presentation.di.module
 
 import android.content.Context
 import com.jsevilla.musicapp.App
+import com.jsevilla.musicapp.data.repository.AlbumDataRepository
 import com.jsevilla.musicapp.data.repository.HomeDataRepository
 import com.jsevilla.musicapp.data.repository.SearchDataRepository
+import com.jsevilla.musicapp.domain.repository.AlbumRepository
 import com.jsevilla.musicapp.domain.repository.HomeRepository
 import com.jsevilla.musicapp.domain.repository.SearchRepository
 import dagger.Module
@@ -29,5 +31,11 @@ class AppModule(private var app: App) {
     @Singleton
     fun provideSearchRepository(searchDataRepository: SearchDataRepository): SearchRepository {
         return searchDataRepository
+    }
+
+    @Provides
+    @Singleton
+    fun provideAlbumRepository(albumDataRepository: AlbumDataRepository): AlbumRepository {
+        return albumDataRepository
     }
 }
