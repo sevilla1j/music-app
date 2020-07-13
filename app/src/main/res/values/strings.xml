@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Music App</string>
+    <string name="txt_message_hello">¿Qué te gustaría escuchar hoy?</string>
+    <string name="txt_search_music">Buscar Música</string>
+    <string name="txt_home">Inicio</string>
+    <string name="txt_recent_activities">" Actividades recientes"</string>
 </resources>

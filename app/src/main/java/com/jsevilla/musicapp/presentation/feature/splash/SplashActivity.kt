@@ -39,6 +39,7 @@ class SplashActivity : BaseActivity(), HasComponent<SplashComponent>,
     }
 
     override fun onHome() {
+        this.navigator.navigateToHome(this)
         this.finish()
     }
 
