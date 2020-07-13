@@ -52,7 +52,7 @@
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:textColor="@color/colorGray"
-                android:textSize="@dimen/sp20" />
+                android:textSize="@dimen/sp24" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
