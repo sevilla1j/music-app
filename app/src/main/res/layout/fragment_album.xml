@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center|center_horizontal|center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/dp32"
+            android:layout_height="@dimen/dp32"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp8"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_back"
+            android:tint="@color/colorBackground" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp250"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logotipo" />
+
+    <TextView
+        android:id="@+id/txtAlbum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:fontFamily="@font/samuel_font"
+        android:textColor="@color/colorGray"
+        android:textSize="@dimen/sp32"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgPhoto"
+        tools:text="Romance Quinceañero" />
+
+    <TextView
+        android:id="@+id/txtArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp8"
+        android:fontFamily="@font/samuel_font"
+        android:textColor="@color/colorGray"
+        android:textSize="@dimen/sp24"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAlbum"
+        tools:text="Luis Silva" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp8"
+        android:fillViewport="true"
+        android:fitsSystemWindows="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtArtist">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp8"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginEnd="@dimen/dp8"
+                android:fontFamily="@font/font_harlow"
+                android:text="@string/txt_list_music"
+                android:textSize="@dimen/sp24" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

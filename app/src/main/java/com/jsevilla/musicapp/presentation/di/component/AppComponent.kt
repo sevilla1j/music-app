@@ -1,6 +1,7 @@
 package com.jsevilla.musicapp.presentation.di.component
 
 import android.content.Context
+import com.jsevilla.musicapp.domain.repository.AlbumRepository
 import com.jsevilla.musicapp.domain.repository.HomeRepository
 import com.jsevilla.musicapp.domain.repository.SearchRepository
 import com.jsevilla.musicapp.presentation.base.BaseActivity
@@ -19,4 +20,6 @@ interface AppComponent {
     fun homeRepository(): HomeRepository
 
     fun searchRepository(): SearchRepository
+
+    fun albumRepository(): AlbumRepository
 }
